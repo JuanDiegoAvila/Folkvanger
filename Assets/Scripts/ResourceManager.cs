@@ -4,10 +4,22 @@ using UnityEngine;
 public class ResourceManager : MonoBehaviour
 {
     public TextMeshProUGUI woodText;
-    public int currentWood;
+    public int currentWood = 200;
 
     public TextMeshProUGUI goldText;
-    public int currentGold;
+    public int currentGold = 200;
+
+    void Start()
+    {
+        woodText.text = $"{currentWood}";
+        goldText.text = $"{currentGold}";
+    }
+
+    void Update()
+    {
+        woodText.text = $"{currentWood}";
+        goldText.text = $"{currentGold}";
+    }
 
 
     public void AddWood(int woodToAdd)
@@ -45,5 +57,15 @@ public class ResourceManager : MonoBehaviour
         {
             goldText.text = currentGold + "";
         }
+    }
+
+    public bool ComprarMejora(int precio)
+    {
+        if (precio <= currentWood)
+        {
+            currentWood -= precio;
+            return true;
+        }
+        return false;
     }
 }
