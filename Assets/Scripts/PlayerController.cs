@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb; // Referencia al componente Rigidbody2D
 
     public Animator animator;
-    private bool isAttacking = false;
 
     void Start()
     {
@@ -41,18 +40,45 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+        if (moveHorizontal > 0)
         {
-            // Activar el Trigger de ataque
-            animator.SetTrigger("atack");
-            isAttacking = true; // Marcar que el jugador está atacando
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (moveHorizontal < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (moveHorizontal!=0 && moveVertical == 0)
+            {
+                // Activar el Trigger de ataque
+                animator.SetTrigger("rightAttack");
+            }
+            if (moveVertical>0 && moveHorizontal == 0)
+            {
+                // Activar el Trigger de ataque
+                animator.SetTrigger("upAttack");
+            }
+            if (moveVertical < 0 && moveHorizontal == 0)
+            {
+                // Activar el Trigger de ataque
+                animator.SetTrigger("downAttack");
+            }
+            //Ataque en todas direcciones
+            if (moveVertical != 0 && moveHorizontal != 0)
+            {
+                animator.SetTrigger("rightAttack");
+            }
+            //Ataque en IDLE
+            if (moveVertical == 0 && moveHorizontal == 0)
+            {
+                animator.SetTrigger("rightAttack");
+            }
         }
     }
 
-    public void OnAttackAnimationFinished()
-    {
-        // Restablecer la variable isAttacking cuando la animación de ataque ha terminado
-        isAttacking = false;
-    }
 }
 
