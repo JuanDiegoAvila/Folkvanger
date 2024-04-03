@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb; // Referencia al componente Rigidbody2D
 
+    public Animator animator;
+    private bool isAttacking = false;
+
     void Start()
     {
         // Obtener la referencia al componente Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -28,7 +32,27 @@ public class PlayerController : MonoBehaviour
 
         // Mover el jugador multiplicando por la velocidad y el tiempo
         rb.velocity = movement * speed;
+        if (movement.magnitude > 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+        {
+            // Activar el Trigger de ataque
+            animator.SetTrigger("atack");
+            isAttacking = true; // Marcar que el jugador está atacando
+        }
     }
 
+    public void OnAttackAnimationFinished()
+    {
+        // Restablecer la variable isAttacking cuando la animación de ataque ha terminado
+        isAttacking = false;
+    }
 }
 
