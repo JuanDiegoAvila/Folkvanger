@@ -8,10 +8,13 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb; // Referencia al componente Rigidbody2D
 
+    public Animator animator;
+
     void Start()
     {
         // Obtener la referencia al componente Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -28,6 +31,53 @@ public class PlayerController : MonoBehaviour
 
         // Mover el jugador multiplicando por la velocidad y el tiempo
         rb.velocity = movement * speed;
+        if (movement.magnitude > 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        if (moveHorizontal > 0)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (moveHorizontal < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (moveHorizontal!=0 && moveVertical == 0)
+            {
+                // Activar el Trigger de ataque
+                animator.SetTrigger("rightAttack");
+            }
+            if (moveVertical>0 && moveHorizontal == 0)
+            {
+                // Activar el Trigger de ataque
+                animator.SetTrigger("upAttack");
+            }
+            if (moveVertical < 0 && moveHorizontal == 0)
+            {
+                // Activar el Trigger de ataque
+                animator.SetTrigger("downAttack");
+            }
+            //Ataque en todas direcciones
+            if (moveVertical != 0 && moveHorizontal != 0)
+            {
+                animator.SetTrigger("rightAttack");
+            }
+            //Ataque en IDLE
+            if (moveVertical == 0 && moveHorizontal == 0)
+            {
+                animator.SetTrigger("rightAttack");
+            }
+        }
     }
 
 }
