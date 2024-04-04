@@ -736,6 +736,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &341103310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: d388bcaf39e25394da6ec9126cc73e25, type: 3}
+  m_PrefabInstance: {fileID: 1689069483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &341103314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341103310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546db855e419e3d448a7796912a9defb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  animator: {fileID: 0}
 --- !u!1 &384534241
 GameObject:
   m_ObjectHideFlags: 0
@@ -70283,8 +70302,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: d388bcaf39e25394da6ec9126cc73e25, type: 3}
       propertyPath: m_Name
-      value: Torch_Red
+      value: Goblin1
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: d388bcaf39e25394da6ec9126cc73e25, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a29788548873067469b613cd4adca115, type: 2}
     - target: {fileID: 3626916397498700004, guid: d388bcaf39e25394da6ec9126cc73e25, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -70332,7 +70355,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: d388bcaf39e25394da6ec9126cc73e25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 341103314}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: d388bcaf39e25394da6ec9126cc73e25, type: 3}
 --- !u!1 &1716075603
 GameObject:
@@ -71928,6 +71954,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8263717120296778109, guid: c1e6e782e3080884f817eef40e25e88a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 24c1e4ad42e2590478ac00c68d429a67, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
