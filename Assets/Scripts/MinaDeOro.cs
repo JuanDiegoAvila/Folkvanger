@@ -7,10 +7,9 @@ public class MinaDeOro : MonoBehaviour
 {
     private readonly float tiempoProduccion = 3;
     private float tiempoActual;
-
-    private bool recogido;
     private int oroProducido;
     private readonly int limiteOro = 200;
+    float tiempoParaAgregarOro = 0f;
 
     private Estado estado = new Estado();
 
@@ -36,7 +35,6 @@ public class MinaDeOro : MonoBehaviour
     {
         estado = Estado.idle;
         tiempoActual = 0;
-        recogido = false;
         oroProducido = 0;
         estaCompleto = false;
 
@@ -50,12 +48,17 @@ public class MinaDeOro : MonoBehaviour
     void Update()
     {
         tiempoActual += Time.deltaTime;
+        tiempoParaAgregarOro += Time.deltaTime;
+
         if (estado.Equals(Estado.completo))
         {
             if (tiempoActual < tiempoProduccion)
             {
-                if (oroProducido < limiteOro)
-                    oroProducido++;
+                if (oroProducido < limiteOro && tiempoParaAgregarOro >= 1f)
+                {
+                    oroProducido += 1;
+                    tiempoParaAgregarOro -= 1f;
+                }
             }
             else
             {
@@ -87,12 +90,6 @@ public class MinaDeOro : MonoBehaviour
 
     public void RecogerOro()
     {
-        //print("Entro a recoger");
-        //if (recogido)
-        //    return;
-
-        print("Esta recogiendo");
-
         manager.AddGold(oroProducido);
         tiempoActual = 0;
         oroProducido = 0;
@@ -103,7 +100,6 @@ public class MinaDeOro : MonoBehaviour
     {
         if (manager.ComprarMejora(Precio))
         {
-            print("adentro");
             switch (estado)
             {
                 case Estado.idle:
