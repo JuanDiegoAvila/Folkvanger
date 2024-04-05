@@ -124,5 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  animator: {fileID: 0}
-  explosion: {fileID: 941362428343273226, guid: 7518a91c2f28f30459e0aee3c222dcc5, type: 3}
+  explosion: {fileID: 2607888191872090104, guid: e3eef08d46ef861408e15f64ae0f08ad, type: 3}
