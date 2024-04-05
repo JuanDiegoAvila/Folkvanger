@@ -25,9 +25,9 @@ public class Projectile : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);    
         if (transform.position.x == target.x && transform.position.y == target.y)
         {
-            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), Quaternion.identity);
+            GameObject explosiones = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
             DestroyProjectile();
-
+            Destroy(explosiones, 0.5f);
         }
     }
 
@@ -35,7 +35,10 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            GameObject explosiones = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
             DestroyProjectile();
+
+            Destroy(explosiones, 0.5f);
         }
     }
 
