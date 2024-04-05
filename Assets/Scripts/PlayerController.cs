@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f; // Velocidad del jugador
+    public bool isAttacking = false; // Variable para saber si el jugador está atacando
 
     private Rigidbody2D rb; // Referencia al componente Rigidbody2D
 
@@ -50,34 +51,44 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
         {
-            if (moveHorizontal!=0 && moveVertical == 0)
-            {
-                // Activar el Trigger de ataque
-                animator.SetTrigger("rightAttack");
-            }
-            if (moveVertical>0 && moveHorizontal == 0)
-            {
-                // Activar el Trigger de ataque
-                animator.SetTrigger("upAttack");
-            }
-            if (moveVertical < 0 && moveHorizontal == 0)
-            {
-                // Activar el Trigger de ataque
-                animator.SetTrigger("downAttack");
-            }
-            //Ataque en todas direcciones
-            if (moveVertical != 0 && moveHorizontal != 0)
-            {
-                animator.SetTrigger("rightAttack");
-            }
-            //Ataque en IDLE
-            if (moveVertical == 0 && moveHorizontal == 0)
-            {
-                animator.SetTrigger("rightAttack");
-            }
+            StartCoroutine(PerformAttack(moveHorizontal, moveVertical));
         }
+    }
+
+    IEnumerator PerformAttack(float moveHorizontal, float moveVertical)
+    {
+        isAttacking = true;
+
+        if (moveHorizontal != 0 && moveVertical == 0)
+        {
+            // Activar el Trigger de ataque
+            animator.SetTrigger("rightAttack");
+        }
+        if (moveVertical > 0 && moveHorizontal == 0)
+        {
+            // Activar el Trigger de ataque
+            animator.SetTrigger("upAttack");
+        }
+        if (moveVertical < 0 && moveHorizontal == 0)
+        {
+            // Activar el Trigger de ataque
+            animator.SetTrigger("downAttack");
+        }
+        //Ataque en todas direcciones
+        if (moveVertical != 0 && moveHorizontal != 0)
+        {
+            animator.SetTrigger("rightAttack");
+        }
+        //Ataque en IDLE
+        if (moveVertical == 0 && moveHorizontal == 0)
+        {
+            animator.SetTrigger("rightAttack");
+        }
+
+        yield return new WaitForSeconds(0.5f); // Asume que el ataque dura 0.5 segundos
+        isAttacking = false;
     }
 
 }
