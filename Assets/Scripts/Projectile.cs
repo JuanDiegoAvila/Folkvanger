@@ -8,6 +8,11 @@ public class Projectile : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
+
+
+    public GameObject explosion;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +25,9 @@ public class Projectile : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);    
         if (transform.position.x == target.x && transform.position.y == target.y)
         {
+            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), Quaternion.identity);
             DestroyProjectile();
+
         }
     }
 

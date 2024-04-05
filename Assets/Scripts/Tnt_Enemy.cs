@@ -13,12 +13,14 @@ public class Tnt_Enemy : MonoBehaviour
 
     public GameObject projectile;
 
+    public Animator animator;
+
     private Transform player;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        animator = GetComponent<Animator>();
         timeBtwThrows = startTimeBtwThrows;
     }
 
@@ -28,12 +30,15 @@ public class Tnt_Enemy : MonoBehaviour
         if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            animator.SetBool("isRunning", true);
         } else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
             transform.position = this.transform.position;
+            animator.SetBool("isRunning", false);
         } else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         { 
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            animator.SetBool("isRunning", true);
         }
 
 

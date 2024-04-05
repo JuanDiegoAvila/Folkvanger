@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: ac6fec274d21af643a6c7c1b21e9b925, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d9797c6655ffa894ab5a531eb72ebba9, type: 2}
     - target: {fileID: 3626916397498700004, guid: ac6fec274d21af643a6c7c1b21e9b925, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -120,3 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  animator: {fileID: 0}
+  explosion: {fileID: 941362428343273226, guid: 7518a91c2f28f30459e0aee3c222dcc5, type: 3}
