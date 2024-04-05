@@ -2,20 +2,14 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class MinaDeOro : MonoBehaviour
+public class Torre : MonoBehaviour
 {
-    private readonly float tiempoProduccion = 3;
-    private float tiempoActual;
-    private int oroProducido;
-    private readonly int limiteOro = 200;
-    float tiempoParaAgregarOro = 0f;
-
     private Estado estado = new Estado();
 
     public ResourceManager manager;
     public GameObject objetoComprar;
     public GameObject TextoPrecio;
-    public GameObject Recolectar;
+    public GameObject Arquero;
 
     private int Precio;
     private Animator animator;
@@ -33,8 +27,6 @@ public class MinaDeOro : MonoBehaviour
     void Start()
     {
         estado = Estado.idle;
-        tiempoActual = 0;
-        oroProducido = 0;
         estaCompleto = false;
 
         // Obtener el precio de la mejora.
@@ -46,25 +38,6 @@ public class MinaDeOro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tiempoActual += Time.deltaTime;
-        tiempoParaAgregarOro += Time.deltaTime;
-
-        if (estado.Equals(Estado.completo))
-        {
-            if (tiempoActual < tiempoProduccion)
-            {
-                if (oroProducido < limiteOro && tiempoParaAgregarOro >= 1f)
-                {
-                    oroProducido += 1;
-                    tiempoParaAgregarOro -= 1f;
-                }
-            }
-            else
-            {
-                Recolectar.SetActive(true);
-            }
-        }
-
         if (adentroDeCollider && Input.GetKeyDown(KeyCode.C))
         {
             ComprarMejora();
@@ -87,14 +60,6 @@ public class MinaDeOro : MonoBehaviour
         }
     }
 
-    public void RecogerOro()
-    {
-        manager.AddGold(oroProducido);
-        tiempoActual = 0;
-        oroProducido = 0;
-        Recolectar.SetActive(false);
-    }
-
     void ComprarMejora()
     {
         if (manager.ComprarMejora(Precio))
@@ -110,6 +75,10 @@ public class MinaDeOro : MonoBehaviour
                     estado = Estado.completo;
                     objetoComprar.SetActive(false);
                     estaCompleto = true;
+
+                    // Activar arqueros 
+                    Arquero.SetActive(true); 
+
                     break;
             }
         }
