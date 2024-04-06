@@ -11,11 +11,14 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         // Obtener la referencia al componente Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -65,26 +68,31 @@ public class PlayerController : MonoBehaviour
         {
             // Activar el Trigger de ataque
             animator.SetTrigger("rightAttack");
+            audioSource.Play();
         }
         if (moveVertical > 0 && moveHorizontal == 0)
         {
             // Activar el Trigger de ataque
             animator.SetTrigger("upAttack");
+            audioSource.Play();
         }
         if (moveVertical < 0 && moveHorizontal == 0)
         {
             // Activar el Trigger de ataque
             animator.SetTrigger("downAttack");
+            audioSource.Play();
         }
         //Ataque en todas direcciones
         if (moveVertical != 0 && moveHorizontal != 0)
         {
             animator.SetTrigger("rightAttack");
+            audioSource.Play();
         }
         //Ataque en IDLE
         if (moveVertical == 0 && moveHorizontal == 0)
         {
             animator.SetTrigger("rightAttack");
+            audioSource.Play();
         }
 
         yield return new WaitForSeconds(0.5f); // Asume que el ataque dura 0.5 segundos

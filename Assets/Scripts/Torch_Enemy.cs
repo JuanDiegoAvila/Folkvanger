@@ -9,10 +9,17 @@ public class Torch_Enemy : MonoBehaviour
     public Animator animator;
     private bool isAttacking = false;
 
+    //private PlayerController playerController;
+
+    private AudioSource audioSource;
+
+    public AudioClip audio;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,6 +55,7 @@ public class Torch_Enemy : MonoBehaviour
             if (isAttacking)
             {
 
+                //audioSource.PlayOneShot(audio);
                 animator.SetBool("isAttacking", true);
                 // Determinar la dirección del jugador en relación con el enemigo
                 if (angle > -45 && angle <= 45)
@@ -75,6 +83,8 @@ public class Torch_Enemy : MonoBehaviour
             {
                 animator.SetBool("isAttacking", false);
             }
+
+
         }
         else
         {
@@ -83,4 +93,5 @@ public class Torch_Enemy : MonoBehaviour
         }
 
     }
+
 }
