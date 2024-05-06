@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
             audioSource.Play();
         }
 
-        yield return new WaitForSeconds(0.5f); // Asume que el ataque dura 0.5 segundos
+        yield return new WaitForSeconds(0.3f); // Asume que el ataque dura 0.5 segundos
         isAttacking = false;
     }
 

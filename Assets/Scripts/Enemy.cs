@@ -5,17 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    //[SerializeField] float health, maxHealth = 3f;
+    public int health;
 
-    //[SerializeField] HealthEnemy healthbar;
-
-    //private void Awake()
-    //{
-    //    healthbar = GetComponentInChildren<HealthEnemy>();
-    //}
-    // Start is called before the first frame update
-
-    private PlayerController playerController;
     void Start()
     {
         
@@ -24,19 +15,30 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
         
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            playerController = collision.gameObject.GetComponent<PlayerController>();
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        playerController = collision.gameObject.GetComponent<PlayerController>();
 
-            if (playerController.isAttacking)
-            {
-                Destroy(gameObject);
-            }
-        }
+    //        if (playerController.isAttacking)
+    //        {
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //}
+
+    public void TakeDamage(int damage)
+    {
+        //Instantiate(hitEffect, transform.position, Quaternion.identity);
+        health -= damage;
+        Debug.Log("Damage taken");
     }
 }

@@ -11,15 +11,12 @@ public class Torch_Enemy : MonoBehaviour
 
     //private PlayerController playerController;
 
-    private AudioSource audioSource;
 
-    public AudioClip audio;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
