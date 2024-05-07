@@ -2,7 +2,27 @@ fileFormatVersion: 2
 guid: e6a8020a8a66b6a4899fa1601a004bc8
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Chopped
+    second: {fileID: 7400000, guid: 6a17204a5800f70439fdedb8ae9643f3, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Hit
+    second: {fileID: 7400000, guid: 2a0a6191dbe0c8b4fbe83482ffa46a39, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle
+    second: {fileID: 7400000, guid: 388e369792aedf643b8c974cb930474c, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Original
+    second: {fileID: 7400000, guid: 6859b0e8632f109439c21ebc530d14ba, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -97,7 +117,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638478644558352076
+  platformSettingsDirtyTick: 638506975431643432
   textureAssetName: 
   singleSpriteImportData:
   - name: 

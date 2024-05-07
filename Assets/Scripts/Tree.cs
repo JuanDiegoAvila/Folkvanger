@@ -1,72 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Tree : MonoBehaviour
+namespace Assets.Scripts
 {
-    private readonly float tiempoRecuperacion = 30f;
-    private float tiempoActual;
-
-    private readonly float tiempoGolpe = 1f;
-    private float tiempoActualGolpe = 0;
-
-    public ResourceManager manager;
-    private Animator animator;
-    private PlayerController playerController;
-
-    public int hits = 3;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Tree : MonoBehaviour, IDamageable
     {
-        animator = GetComponent<Animator>();
-    }
+        public Animator animator;
+        public AudioSource audioSource;
 
-    // Update is called once per frame
-    void Update()
-    {
-        tiempoActual += Time.deltaTime;
-        if (tiempoActual >= tiempoRecuperacion)
+        public int maxHits = 3;
+        public int currentHits;
+
+        public float coolingTime = 50f;
+        public float currentCoolingTime = 0f;
+
+        void Start()
         {
-            animator.SetBool("isChopped", false);
-
-            gameObject.GetComponent<Collider2D>().enabled = true;
-            tiempoActual = 0;
-            hits = 3;
+            currentHits = maxHits;
         }
-    }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        void Update()
         {
-            playerController = collision.gameObject.GetComponent<PlayerController>();
-
-            if (playerController.isAttacking)
+            if (currentHits <= 0)
             {
-                Chop();
+                currentCoolingTime += Time.deltaTime;
+                if (currentCoolingTime >= coolingTime)
+                {
+                    animator.SetBool("isChopped", false);
+                    gameObject.GetComponent<Collider2D>().enabled = true;
+                    currentHits = maxHits;
+                    currentCoolingTime = 0f;
+                }
             }
         }
-    }
 
-    private void Chop()
-    {
-        if(tiempoActualGolpe < tiempoGolpe)
+        public void TakeDamage(int damage)
         {
-            manager.AddWood(5);
-            hits--;
-            if (hits <= 0)
+            if (!gameObject.GetComponent<Collider2D>().enabled)
+            {
+                return;
+            }
+
+            audioSource.Play();
+            // Trees don't take damage, they just lose hits
+            currentHits -= 1;
+            animator.SetTrigger("isHit");
+
+            if (currentHits <= 0)
             {
                 animator.SetBool("isChopped", true);
                 gameObject.GetComponent<Collider2D>().enabled = false;
             }
-            else
-            {
-                animator.SetTrigger("isHit");
-            }
-            tiempoActualGolpe = 0;
         }
-
-        tiempoActualGolpe += Time.deltaTime;
     }
 }

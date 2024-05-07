@@ -1,40 +1,81 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+namespace Assets.Scripts
 {
-    private float timeBtwAttack;
-    public float startTimeBtwAttack;
-
-    public Transform attackPos;
-    public float attackRange;
-    public LayerMask whatIsEnemies;
-    public int damage;
-
-    void Update()
+    public class PlayerAttack : MonoBehaviour
     {
-        if (timeBtwAttack <= 0)
+
+        public Animator animator;
+        public AudioSource audioSource;
+        public Transform attackPoint;
+
+        public LayerMask enemyLayers;
+
+        public float attackRange = 0.5f;
+
+        public float attackRate = 2f;
+        float nextAttackTime = 0f;
+
+        private void Update()
         {
-            if (Input.GetKey(KeyCode.Space))
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+
+            if (Time.time >= nextAttackTime && Input.GetKeyDown(KeyCode.Space))
             {
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
-                }
+                Attack((int)moveHorizontal, (int)moveVertical);
+                nextAttackTime = Time.time + 1f / attackRate;
             }
-            timeBtwAttack = startTimeBtwAttack;
-        } else
+
+        }
+
+        void Attack(int moveHorizontal, int moveVertical)
         {
-            timeBtwAttack -= Time.deltaTime;
-        }    
+            if (moveHorizontal != 0 && moveVertical == 0)
+            {
+                animator.SetTrigger("rightAttack");
+                audioSource.Play();
+            }
+            if (moveVertical > 0 && moveHorizontal == 0)
+            {
+                animator.SetTrigger("upAttack");
+                audioSource.Play();
+            }
+            if (moveVertical < 0 && moveHorizontal == 0)
+            {
+                animator.SetTrigger("downAttack");
+                audioSource.Play();
+            }
+            if (moveVertical != 0 && moveHorizontal != 0)
+            {
+                animator.SetTrigger("rightAttack");
+                audioSource.Play();
+            }
+            if (moveVertical == 0 && moveHorizontal == 0)
+            {
+                animator.SetTrigger("rightAttack");
+                audioSource.Play();
+            }
 
-    }
+            // Detect enemies in range of attack - OBJECTS
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+            // Deal damage to enemies
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<IDamageable>().TakeDamage(20);
+            }
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            if (attackPoint == null)
+            {
+                return;
+            }
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
     }
 }

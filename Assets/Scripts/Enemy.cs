@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
+    public int maxHealth = 100;
+    public int currentHealth;
 
-    public int health;
+    //public int currentHealth;
+    public Slider slider;
 
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+    //void Update()
+    //{
+    //    if (currentHealth <= 0)
+    //    {
+    //        Destroy(gameObject);
+    //    }
         
-    }
+    //}
 
     //private void OnCollisionStay2D(Collision2D collision)
     //{
@@ -38,7 +42,28 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         //Instantiate(hitEffect, transform.position, Quaternion.identity);
-        health -= damage;
-        Debug.Log("Damage taken");
+        
+        // move slider to show damage 
+        
+        //currentHealth -= damage;
+        //slider.value = (currentHealth / 100);
+        //Debug.Log("Damage taken "+ slider.value);
+
+        currentHealth -= damage;
+
+        // Play hurt animation
+
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
+
+        // Update health bar
+        slider.value = currentHealth / (float) maxHealth;
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
