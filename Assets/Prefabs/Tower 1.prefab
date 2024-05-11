@@ -762,6 +762,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 4894639316140411292, guid: 88ae5ef69e1900e46b796f56dd0d0cd8, type: 3}
   shootPoint: {fileID: 7403158808212976901}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  detectionRadius: 4.35
   shootingInterval: 2
 --- !u!58 &3646695331711285998
 CircleCollider2D:

@@ -8,12 +8,17 @@ namespace Assets.Scripts
         public Transform shootPoint;
         private Animator animator;
 
-        private Vector3 lastEnemyPosition;
+        //private Vector3 lastEnemyPosition;
 
-        private bool hasTarget = false;
+        //private bool hasTarget = false;
 
+        //private float timeSinceLastShot = 0f;
+        //public float shootingInterval = 2.0f; 
+
+        public LayerMask enemyLayers;
+        public float detectionRadius = 5.0f;
+        public float shootingInterval = 2.0f;
         private float timeSinceLastShot = 0f;
-        public float shootingInterval = 2.0f; 
 
         void Start()
         {
@@ -22,66 +27,106 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (hasTarget)
+            timeSinceLastShot += Time.deltaTime;
+            if (timeSinceLastShot >= shootingInterval)
             {
-                timeSinceLastShot += Time.deltaTime;
-                if (timeSinceLastShot >= shootingInterval)
+                CheckForEnemiesAndShoot();
+                timeSinceLastShot = 0f;
+            }
+        }
+
+        void CheckForEnemiesAndShoot()
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayers);
+
+            if(hitEnemies.Length == 0)
+            {
+                return;
+            }
+
+            var enemy = OrderByDistance(hitEnemies);
+            Vector3 direction = enemy.transform.position - transform.position;
+            ShootArrow(direction.normalized);
+        }
+
+        Collider2D OrderByDistance(Collider2D[] hitEnemies)
+        {
+            Collider2D closestEnemy = null;
+            float minDistance = Mathf.Infinity;
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                if (distance < minDistance)
                 {
-                    Vector3 direction = lastEnemyPosition - transform.position;
-                    ShootArrow(direction.normalized);
-                    timeSinceLastShot = 0f;
+                    minDistance = distance;
+                    closestEnemy = enemy;
                 }
             }
-        }
 
-        void OnTriggerStay2D(Collider2D other)
-        {
-            if (other.CompareTag("Enemy")) 
-            {
-                lastEnemyPosition = other.transform.position;
-                hasTarget = true;
-            }
-        }
-
-        void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.CompareTag("Enemy"))
-            {
-                hasTarget = false;
-            }
+            return closestEnemy;
         }
 
         void ShootArrow(Vector3 direction)
         {
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            // Disparo hacia arriba
-            if (angle > 67.5f && angle <= 112.5f)
+
+            // Voltear sprite del arquero dependiendo de la dirección
+            if (direction.x < 0)
             {
-                animator.SetTrigger("ShootUp");
+                transform.localScale = new Vector3(-1, 1, 1);
             }
-            // Disparo hacia abajo
-            else if (angle > -112.5f && angle <= -67.5f)
+            else
             {
-                animator.SetTrigger("ShootDown");
+                transform.localScale = new Vector3(1, 1, 1);
             }
-            // Disparo frontal
-            else if (angle > -67.5f && angle <= 0 || angle > 0 && angle <= 67.5f)
+
+            if (angle < -157.5f || angle > 157.5f)
             {
                 animator.SetTrigger("ShootFront");
             }
-            // Disparo diagonal hacia abajo
-            else if (angle > -167.5f && angle <= -112.5f)
+            else if (angle > 112.5f)
+            {
+                animator.SetTrigger("ShootDiagonalUp");
+            }
+            else if (angle > 67.5f)
+            {
+                animator.SetTrigger("ShootUp");
+            }
+            else if (angle > 22.5f)
+            {
+                animator.SetTrigger("ShootDiagonalUp");
+            }
+            else if (angle > -22.5f)
+            {
+                animator.SetTrigger("ShootFront");
+            }
+            else if (angle > -67.5f)
             {
                 animator.SetTrigger("ShootDiagonalDown");
             }
-            // Disparo diagonal hacia arriba
-            else if (angle > 112.5f && angle <= 167.5f)
+            else if (angle > -112.5f)
             {
-                animator.SetTrigger("ShootDiagonalUp");
+                animator.SetTrigger("ShootDown");
+            }
+            else if (angle > -157.5f)
+            {
+                animator.SetTrigger("ShootDiagonalDown");
             }
 
             GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, Quaternion.Euler(0, 0, angle));
             arrow.GetComponent<Arrow>().SetDirection(direction);
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            if (shootPoint == null)
+            {
+                return;
+            }
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(shootPoint.position, detectionRadius);
         }
     }
 }
