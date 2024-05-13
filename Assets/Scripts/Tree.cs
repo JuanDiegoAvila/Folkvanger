@@ -1,3 +1,4 @@
+using System.Resources;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -6,6 +7,7 @@ namespace Assets.Scripts
     {
         public Animator animator;
         public AudioSource audioSource;
+        public ResourceManager resourceManager;
 
         public int maxHits = 3;
         public int currentHits;
@@ -41,6 +43,7 @@ namespace Assets.Scripts
             }
 
             audioSource.Play();
+            resourceManager.AddWood(5);
             // Trees don't take damage, they just lose hits
             currentHits -= 1;
             animator.SetTrigger("isHit");
