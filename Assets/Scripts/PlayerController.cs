@@ -1,20 +1,27 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IDamageable
     {
         public float speed = 5f; // Velocidad del jugador
-        public bool isAttacking = false; // Variable para saber si el jugador está atacando
 
         private Rigidbody2D rb; // Referencia al componente Rigidbody2D
         public Animator animator;
+
+        public int maxHealth = 100;
+        public int currentHealth;
+
+        public Slider slider;
 
         void Start()
         {
             // Obtener la referencia al componente Rigidbody2D
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+
+            currentHealth = maxHealth;
         }
 
         void Update()
@@ -49,6 +56,28 @@ namespace Assets.Scripts
             {
                 gameObject.transform.localScale = new Vector3(-1, 1, 1);
             }
+        }
+
+        public void TakeDamage(int damage)
+        {
+
+            currentHealth -= damage;
+
+            // Play hurt animation
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+
+            // Update health bar
+            slider.value = currentHealth / (float)maxHealth;
+        }
+
+        void Die()
+        {
+            //Destroy(gameObject);
+            Debug.Log("I died");
         }
     }
 }

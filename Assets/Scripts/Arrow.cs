@@ -4,7 +4,7 @@ namespace Assets.Scripts
 {
     public class Arrow : MonoBehaviour
     {
-        public float speed = 10f; // Ajusta según necesites
+        public float speed = 20f; // Ajusta según necesites
         private float lifeTime = 0.5f; // Tiempo de vida de la flecha en segundos
 
         public void SetDirection(Vector3 dir)

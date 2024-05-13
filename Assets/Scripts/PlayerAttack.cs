@@ -31,31 +31,29 @@ namespace Assets.Scripts
 
         void Attack(int moveHorizontal, int moveVertical)
         {
+
             if (moveHorizontal != 0 && moveVertical == 0)
             {
                 animator.SetTrigger("rightAttack");
-                audioSource.Play();
             }
             if (moveVertical > 0 && moveHorizontal == 0)
             {
                 animator.SetTrigger("upAttack");
-                audioSource.Play();
             }
             if (moveVertical < 0 && moveHorizontal == 0)
             {
                 animator.SetTrigger("downAttack");
-                audioSource.Play();
             }
             if (moveVertical != 0 && moveHorizontal != 0)
             {
                 animator.SetTrigger("rightAttack");
-                audioSource.Play();
             }
             if (moveVertical == 0 && moveHorizontal == 0)
             {
                 animator.SetTrigger("rightAttack");
-                audioSource.Play();
             }
+
+            audioSource.Play();
 
             // Detect enemies in range of attack - OBJECTS
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -63,7 +61,20 @@ namespace Assets.Scripts
             // Deal damage to enemies
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<IDamageable>().TakeDamage(20);
+                IDamageable damageable = enemy.GetComponent<IDamageable>();
+                if (damageable != null)
+                {
+                    damageable.TakeDamage(20);
+                }
+
+                Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    Vector2 forceDirection = enemy.transform.position - transform.position;
+                    forceDirection.Normalize(); // Asegura que la dirección tenga longitud 1
+                    float forceMagnitude = 500f; // Ajusta la magnitud de la fuerza según necesites
+                    rb.AddForce(forceDirection * forceMagnitude);
+                }
             }
         }
 
