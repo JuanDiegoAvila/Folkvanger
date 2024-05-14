@@ -28,13 +28,18 @@ public class Torch_Enemy : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player") != null ? GameObject.FindGameObjectWithTag("Player").transform : null;
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         attackTimer += Time.deltaTime; // Incrementar el temporizador basado en el tiempo transcurrido
+
+        if(target == null)
+        {
+            return;
+        }
 
         Vector2 direction = target.position - transform.position;
 
