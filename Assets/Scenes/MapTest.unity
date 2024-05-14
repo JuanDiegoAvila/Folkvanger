@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (17)
@@ -383,6 +387,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (7)
@@ -447,6 +455,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -837,6 +849,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (4)
@@ -903,6 +919,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (8)
@@ -967,6 +987,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -1111,6 +1135,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (37)
@@ -1175,6 +1203,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -1243,6 +1275,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (36)
@@ -1307,6 +1343,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -1639,6 +1679,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -7060,6 +7104,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (12)
@@ -7124,6 +7172,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -7344,6 +7396,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -7621,6 +7677,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -7931,6 +7991,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (30)
@@ -8118,6 +8182,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (18)
@@ -8182,6 +8250,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -8338,6 +8410,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -70592,6 +70668,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (32)
@@ -70869,6 +70949,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (11)
@@ -70933,6 +71017,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -71790,6 +71878,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (10)
@@ -72070,6 +72162,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (24)
@@ -72165,6 +72261,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -72298,6 +72398,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (27)
@@ -72362,6 +72466,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -72731,6 +72839,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (14)
@@ -72833,6 +72945,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (21)
@@ -72897,6 +73013,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -73145,6 +73265,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (20)
@@ -73242,6 +73366,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (19)
@@ -73306,6 +73434,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -73677,6 +73809,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
@@ -74360,6 +74496,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: m_Name
       value: Tree (29)
@@ -74424,6 +74564,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
       propertyPath: manager
+      value: 
+      objectReference: {fileID: 551566922}
+    - target: {fileID: 5042139783293005871, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
+      propertyPath: resourceManager
       value: 
       objectReference: {fileID: 551566922}
     - target: {fileID: 5593479883676812245, guid: f4d3abda268aa3c48afcb0236301f626, type: 3}
