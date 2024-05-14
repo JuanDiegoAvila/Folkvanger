@@ -8,6 +8,7 @@ namespace Assets.Scripts
 
 
         public AudioSource hurtSound;
+        public GameObject endGameCanva;
 
         public GameObject deathAnimationPrefab;
         public float speed = 5f; // Velocidad del jugador
@@ -87,6 +88,12 @@ namespace Assets.Scripts
 
             // Instanciar el objeto de animación de muerte en la posición del jugador
             Instantiate(deathAnimationPrefab, (transform.position + new Vector3(0, 0.5f, 0)), Quaternion.identity);
+
+            // Activar el canvas de fin de juego
+            _ = new WaitForSeconds(1.5f);
+
+            endGameCanva.SetActive(true);
+            
         }
     }
 }

@@ -9,12 +9,6 @@ public class ResourceManager : MonoBehaviour
     public TextMeshProUGUI goldText;
     public int currentGold = 200;
 
-    void Start()
-    {
-        woodText.text = $"{currentWood}";
-        goldText.text = $"{currentGold}";
-    }
-
     void Update()
     {
         woodText.text = $"{currentWood}";
