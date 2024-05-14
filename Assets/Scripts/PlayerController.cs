@@ -5,6 +5,11 @@ namespace Assets.Scripts
 {
     public class PlayerController : MonoBehaviour, IDamageable
     {
+
+
+        public AudioSource hurtSound;
+
+        public GameObject deathAnimationPrefab;
         public float speed = 5f; // Velocidad del jugador
 
         private Rigidbody2D rb; // Referencia al componente Rigidbody2D
@@ -60,6 +65,7 @@ namespace Assets.Scripts
 
         public void TakeDamage(int damage)
         {
+            hurtSound.Play();
 
             currentHealth -= damage;
 
@@ -76,8 +82,11 @@ namespace Assets.Scripts
 
         void Die()
         {
-            //Destroy(gameObject);
-            Debug.Log("I died");
+            // Ocultar el jugador
+            gameObject.SetActive(false);
+
+            // Instanciar el objeto de animación de muerte en la posición del jugador
+            Instantiate(deathAnimationPrefab, (transform.position + new Vector3(0, 0.5f, 0)), Quaternion.identity);
         }
     }
 }

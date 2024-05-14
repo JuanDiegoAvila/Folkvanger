@@ -9,6 +9,8 @@ namespace Assets.Scripts
         public AudioSource audioSource;
         public Transform attackPoint;
 
+        private int currentDirection;
+
         public LayerMask enemyLayers;
 
         public float attackRange = 0.5f;
@@ -16,10 +18,40 @@ namespace Assets.Scripts
         public float attackRate = 2f;
         float nextAttackTime = 0f;
 
+        public enum Direction
+        {
+            Up,
+            Down,
+            Left,
+            Right,
+            None
+        }
+
+        private Direction lastDirection = Direction.None;
+
         private void Update()
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
+
+            // Actualizar la última dirección basada en las entradas del usuario
+            if (moveHorizontal > 0)
+            {
+                lastDirection = Direction.Right;
+            }
+            else if (moveHorizontal < 0)
+            {
+                lastDirection = Direction.Left;
+            }
+
+            if (moveVertical > 0)
+            {
+                lastDirection = Direction.Up;
+            }
+            else if (moveVertical < 0)
+            {
+                lastDirection = Direction.Down;
+            }
 
             if (Time.time >= nextAttackTime && Input.GetKeyDown(KeyCode.Space))
             {
@@ -32,25 +64,23 @@ namespace Assets.Scripts
         void Attack(int moveHorizontal, int moveVertical)
         {
 
-            if (moveHorizontal != 0 && moveVertical == 0)
+            switch (lastDirection)
             {
-                animator.SetTrigger("rightAttack");
-            }
-            if (moveVertical > 0 && moveHorizontal == 0)
-            {
-                animator.SetTrigger("upAttack");
-            }
-            if (moveVertical < 0 && moveHorizontal == 0)
-            {
-                animator.SetTrigger("downAttack");
-            }
-            if (moveVertical != 0 && moveHorizontal != 0)
-            {
-                animator.SetTrigger("rightAttack");
-            }
-            if (moveVertical == 0 && moveHorizontal == 0)
-            {
-                animator.SetTrigger("rightAttack");
+                case Direction.Up:
+                    animator.SetTrigger("upAttack");
+                    break;
+                case Direction.Down:
+                    animator.SetTrigger("downAttack");
+                    break;
+                case Direction.Left:
+                    animator.SetTrigger("rightAttack");
+                    break;
+                case Direction.Right:
+                    animator.SetTrigger("rightAttack");
+                    break;
+                default:
+                    animator.SetTrigger("rightAttack"); // Puedes decidir un ataque por defecto
+                    break;
             }
 
             audioSource.Play();
