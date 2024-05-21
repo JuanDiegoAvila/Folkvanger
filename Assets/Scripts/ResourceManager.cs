@@ -1,65 +1,92 @@
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ResourceManager : MonoBehaviour
+namespace Assets.Scripts
 {
-    public TextMeshProUGUI woodText;
-    public int currentWood = 200;
-
-    public TextMeshProUGUI goldText;
-    public int currentGold = 200;
-
-    void Update()
+    public class ResourceManager : MonoBehaviour
     {
-        woodText.text = $"{currentWood}";
-        goldText.text = $"{currentGold}";
-    }
+        public TextMeshProUGUI woodText;
+        public int currentWood = 200;
 
+        public TextMeshProUGUI goldText;
+        public int currentGold = 200;
 
-    public void AddWood(int woodToAdd)
-    {
-        currentWood += woodToAdd;
-        if (woodText != null)
+        public Slider slider;
+        public int maxHunger = 100;
+        public int currentHunger = 100;
+
+        public PlayerController player;
+
+        void Update()
         {
             woodText.text = $"{currentWood}";
-        }
-    }
+            goldText.text = $"{currentGold}";
 
-    public void RemoveWood(int woodToRemove)
-    {
-        currentWood -= woodToRemove;
-        if (woodText != null)
+            if (Time.time % 4 < 0.01f)
+            {
+                currentHunger -= 1;
+                slider.value = currentHunger / (float) maxHunger;
+            }
+
+            if(currentHunger == maxHunger && Time.time % 2 < 0.01f)
+            {
+                player.AddHealth(10);
+            }
+        }
+
+        public void AddMeat()
         {
-            woodText.text = currentWood + "";
+            currentHunger += 10;
         }
-    }
 
-    public void AddGold(int goldToAdd)
-    {
-        currentGold += goldToAdd;
 
-        if (goldText != null)
+        public void AddWood(int woodToAdd)
         {
-            goldText.text = currentGold + "";
+            currentWood += woodToAdd;
+            if (woodText != null)
+            {
+                woodText.text = $"{currentWood}";
+            }
         }
-    }
 
-    public void RemoveGold(int goldToRemove)
-    {
-        currentGold -= goldToRemove;
-        if (goldText != null)
+        public void RemoveWood(int woodToRemove)
         {
-            goldText.text = currentGold + "";
+            currentWood -= woodToRemove;
+            if (woodText != null)
+            {
+                woodText.text = currentWood + "";
+            }
         }
-    }
 
-    public bool ComprarMejora(int precio)
-    {
-        if (precio <= currentWood)
+        public void AddGold(int goldToAdd)
         {
-            currentWood -= precio;
-            return true;
+            currentGold += goldToAdd;
+
+            if (goldText != null)
+            {
+                goldText.text = currentGold + "";
+            }
         }
-        return false;
+
+        public void RemoveGold(int goldToRemove)
+        {
+            currentGold -= goldToRemove;
+            if (goldText != null)
+            {
+                goldText.text = currentGold + "";
+            }
+        }
+
+        public bool ComprarMejora(int precio)
+        {
+            if (precio <= currentWood)
+            {
+                currentWood -= precio;
+                return true;
+            }
+            return false;
+        }
     }
 }

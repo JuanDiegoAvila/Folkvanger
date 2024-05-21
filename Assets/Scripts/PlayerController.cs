@@ -64,6 +64,19 @@ namespace Assets.Scripts
             }
         }
 
+        public void AddHealth(int health)
+        {
+            currentHealth += health;
+
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+
+            // Update health bar
+            slider.value = currentHealth / (float)maxHealth;
+        }
+
         public void TakeDamage(int damage)
         {
             hurtSound.Play();

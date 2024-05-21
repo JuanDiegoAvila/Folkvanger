@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class ButtonClick : MonoBehaviour
+    public class ButtonClickM : MonoBehaviour
     {
-        public MinaDeOro minaDeOro;
+        public Granja granja;
 
         // Update is called once per frame
         void Update()
@@ -21,7 +21,7 @@ namespace Assets.Scripts
 
         private void ButtonClicked()
         {
-            minaDeOro.RecogerOro();
+            granja.RecogerCarne();
         }
     }
 }
