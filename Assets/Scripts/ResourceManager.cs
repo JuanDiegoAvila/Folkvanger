@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,22 +22,28 @@ namespace Assets.Scripts
         {
             woodText.text = $"{currentWood}";
             goldText.text = $"{currentGold}";
+            slider.value = currentHunger / (float)maxHunger;
 
             if (Time.time % 4 < 0.01f)
             {
                 currentHunger -= 1;
-                slider.value = currentHunger / (float) maxHunger;
+
+                if (currentHunger <= 0)
+                {
+                    currentHunger = 0;
+                    player.TakeDamage(1);
+                }
             }
 
-            if(currentHunger == maxHunger && Time.time % 2 < 0.01f)
+            if (currentHunger == maxHunger && Time.time % 2 < 0.01f)
             {
                 player.AddHealth(10);
             }
         }
 
-        public void AddMeat()
+        public void AddMeat(int meatToAdd)
         {
-            currentHunger += 10;
+            currentHunger += meatToAdd;
         }
 
 

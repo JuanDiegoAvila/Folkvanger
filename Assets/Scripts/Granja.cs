@@ -57,7 +57,6 @@ namespace Assets.Scripts
                 {
                     carneProducida += 1;
                     tiempoParaAgregarCarne = 0f; // Reset del contador de tiempo para agregar Carne.
-                    print("Carne producida: " + carneProducida + " de " + limiteCarne);
                     if (carneProducida >= minCarne)
                     {
                         Recolectar.SetActive(true);
@@ -89,7 +88,7 @@ namespace Assets.Scripts
 
         public void RecogerCarne()
         {
-            manager.AddMeat();
+            manager.AddMeat(carneProducida);
             tiempoActual = 0;
             carneProducida = 0;
             Recolectar.SetActive(false);
