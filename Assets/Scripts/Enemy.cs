@@ -10,9 +10,12 @@ namespace Assets.Scripts
 
         public Slider slider;
 
+        private RoundManager roundManager;
+
         void Start()
         {
             currentHealth = maxHealth;
+            roundManager = FindObjectOfType<RoundManager>();
         }
 
 
@@ -34,6 +37,7 @@ namespace Assets.Scripts
 
         void Die()
         {
+            roundManager.OnEnemyKilled();
             Destroy(gameObject);
         }
     }
