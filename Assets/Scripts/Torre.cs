@@ -7,7 +7,7 @@ public class Torre : MonoBehaviour
 {
     private Estado estado = new Estado();
 
-    public ResourceManager manager;
+    private ResourceManager manager;
     public GameObject objetoComprar;
     public GameObject TextoPrecio;
     public GameObject Arquero;
@@ -32,6 +32,7 @@ public class Torre : MonoBehaviour
 
         // Obtener el precio de la mejora.
         var textoPrecio = TextoPrecio.GetComponent<TextMeshPro>();
+        manager = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
         animator = GetComponentInParent<Animator>();
         Precio = Convert.ToInt32(textoPrecio.text);
     }

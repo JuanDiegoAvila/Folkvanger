@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         private Estado estado = new Estado();
 
-        public ResourceManager manager;
+        private ResourceManager manager;
         public GameObject objetoComprar;
         public GameObject TextoPrecio;
         public GameObject Recolectar;
@@ -41,6 +41,7 @@ namespace Assets.Scripts
 
             // Obtener el precio de la mejora.
             var textoPrecio = TextoPrecio.GetComponent<TextMeshPro>();
+            manager = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
             animator = GetComponentInParent<Animator>();
             Precio = Convert.ToInt32(textoPrecio.text);
         }
