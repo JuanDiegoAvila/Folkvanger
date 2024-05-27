@@ -12,6 +12,8 @@ public class Torre : MonoBehaviour
     public GameObject TextoPrecio;
     public GameObject Arquero;
 
+    public AudioSource audioSource;
+
     private int Precio;
     private Animator animator;
     private bool adentroDeCollider;
@@ -66,6 +68,7 @@ public class Torre : MonoBehaviour
     {
         if (manager.ComprarMejora(Precio))
         {
+            audioSource.Play();
             switch (estado)
             {
                 case Estado.idle:

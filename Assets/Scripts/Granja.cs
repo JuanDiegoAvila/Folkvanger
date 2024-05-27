@@ -19,6 +19,8 @@ namespace Assets.Scripts
         public GameObject TextoPrecio;
         public GameObject Recolectar;
 
+        public AudioSource audioSource;
+
         private int Precio;
         private Animator animator;
         private bool adentroDeCollider;
@@ -99,6 +101,7 @@ namespace Assets.Scripts
         {
             if (manager.ComprarMejora(Precio))
             {
+                audioSource.Play();
                 switch (estado)
                 {
                     case Estado.idle:

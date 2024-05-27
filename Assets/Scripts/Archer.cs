@@ -8,12 +8,7 @@ namespace Assets.Scripts
         public Transform shootPoint;
         private Animator animator;
 
-        //private Vector3 lastEnemyPosition;
-
-        //private bool hasTarget = false;
-
-        //private float timeSinceLastShot = 0f;
-        //public float shootingInterval = 2.0f; 
+        public AudioSource audioSource;
 
         public LayerMask enemyLayers;
         public float detectionRadius = 5.0f;
@@ -114,6 +109,7 @@ namespace Assets.Scripts
                 animator.SetTrigger("ShootDiagonalDown");
             }
 
+            audioSource.Play();
             GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, Quaternion.Euler(0, 0, angle));
             arrow.GetComponent<Arrow>().SetDirection(direction);
         }

@@ -19,6 +19,9 @@ namespace Assets.Scripts
         public GameObject TextoPrecio;
         public GameObject Recolectar;
 
+        public AudioSource audioSource;
+        public AudioSource collectAudioSource;
+
         private int Precio;
         private Animator animator;
         private bool adentroDeCollider;
@@ -90,6 +93,7 @@ namespace Assets.Scripts
 
         public void RecogerOro()
         {
+            collectAudioSource.Play();
             manager.AddGold(oroProducido);
             tiempoActual = 0;
             oroProducido = 0;
@@ -100,6 +104,7 @@ namespace Assets.Scripts
         {
             if (manager.ComprarMejora(Precio))
             {
+                audioSource.Play();
                 switch (estado)
                 {
                     case Estado.idle:
