@@ -11,6 +11,7 @@ namespace Assets.Scripts
 
         public int maxHits = 3;
         public int currentHits;
+        public int woodPerHit = 20;
 
         public float coolingTime = 50f;
         public float currentCoolingTime = 0f;
@@ -43,7 +44,7 @@ namespace Assets.Scripts
             }
 
             audioSource.Play();
-            resourceManager.AddWood(5);
+            resourceManager.AddWood(woodPerHit);
             // Trees don't take damage, they just lose hits
             currentHits -= 1;
             animator.SetTrigger("isHit");

@@ -61,7 +61,6 @@ namespace Assets.Scripts
                 {
                     oroProducido += 1;
                     tiempoParaAgregarOro = 0f; // Reset del contador de tiempo para agregar oro.
-                    print("Oro producido: " + oroProducido + " de " + limiteOro);
                     if (oroProducido >= minOro)
                     {
                         Recolectar.SetActive(true);
