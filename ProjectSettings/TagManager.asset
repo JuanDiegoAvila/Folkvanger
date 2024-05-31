@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - GameEnd
+  - tower
+  - towerIsland1
   layers:
   - Default
   - TransparentFX

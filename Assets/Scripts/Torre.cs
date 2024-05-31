@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Torre : MonoBehaviour
 {
+    public static event Action OnTowerStateChanged;
     private Estado estado = new Estado();
 
     private ResourceManager manager;
@@ -19,7 +20,7 @@ public class Torre : MonoBehaviour
     private bool adentroDeCollider;
     private bool estaCompleto;
 
-    private enum Estado
+    public enum Estado
     {
         idle = 1,
         mid = 2,
@@ -82,8 +83,10 @@ public class Torre : MonoBehaviour
                     estaCompleto = true;
 
                     // Activar arqueros 
-                    Arquero.SetActive(true); 
+                    Arquero.SetActive(true);
 
+                    // Notificar que el estado ha cambiado a completo
+                    OnTowerStateChanged?.Invoke();
                     break;
             }
         }
@@ -107,5 +110,10 @@ public class Torre : MonoBehaviour
             objetoComprar.SetActive(false);
             adentroDeCollider = false;
         }
+    }
+
+    public Estado GetEstado()
+    {
+        return estado;
     }
 }

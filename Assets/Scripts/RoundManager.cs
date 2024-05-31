@@ -12,6 +12,13 @@ public class RoundManager : MonoBehaviour
     public Transform[] spawnPoints;
     public TextMeshProUGUI roundText;
 
+    public AudioSource roundStartAudioSource;
+    public SoundBasics soundBasics;  // Reference to the SoundBasics script
+
+    public string tagToFind = "towerIsland1"; // El tag que estás buscando
+    private GameObject[] taggedObjects;
+    private bool roundStarted = false;
+
     private int enemiesRemainingToSpawn;
     private int enemiesRemainingAlive;
     private bool waveInProgress;
@@ -19,12 +26,42 @@ public class RoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartRound();
+        // Encuentra todos los GameObjects con el tag especificado y almacénalos en el array
+        taggedObjects = GameObject.FindGameObjectsWithTag(tagToFind);
+
+        // Suscribirse al evento
+        Torre.OnTowerStateChanged += CheckAllTowersComplete;
+    }
+
+    void OnDestroy()
+    {
+        // Cancelar la suscripción al evento
+        Torre.OnTowerStateChanged -= CheckAllTowersComplete;
     }
 
     void Update()
     {
         roundText.text = $"{currentRound}";
+    }
+
+    void CheckAllTowersComplete()
+    {
+        if (roundStarted) return; // Evitar que la ronda inicie más de una vez
+
+        foreach (GameObject obj in taggedObjects)
+        {
+            Torre torreComponent = obj.GetComponent<Torre>();
+
+            if (torreComponent != null)
+            {
+                if (torreComponent.GetEstado() == Torre.Estado.completo)
+                {
+                    StartRound();
+                    roundStarted = true;
+                    return;
+                }
+            }
+        }
     }
 
     void StartRound()
@@ -33,6 +70,16 @@ public class RoundManager : MonoBehaviour
         enemiesRemainingToSpawn = enemiesPerWave;
         enemiesRemainingAlive = enemiesPerWave;
         waveInProgress = true;
+
+        // Reducir el volumen de la música de fondo
+        if (soundBasics != null)
+        {
+            soundBasics.SetLoopedVolume(0f); // Ajusta este valor según sea necesario
+        }
+
+        // Reproducir el audio de inicio de la ronda
+        roundStartAudioSource.Play();
+
         StartCoroutine(SpawnWave());
     }
 
@@ -52,18 +99,16 @@ public class RoundManager : MonoBehaviour
         int spawnIndex = Random.Range(0, spawnPoints.Length);
         Instantiate(enemyPrefab, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
         enemiesRemainingToSpawn--;
-        Debug.Log("Aparecio un enemigo, quedan " + enemiesRemainingToSpawn + " por aparecer");
     }
 
     public void OnEnemyKilled()
     {
         enemiesRemainingAlive--;
-        Debug.Log("Mataste un enemigo, quedan "+enemiesRemainingAlive + " por destruir");
         if (enemiesRemainingAlive <= 0 && !waveInProgress)
         {
-            Debug.Log("Has sobrevivido a la ronda " + currentRound);
-            
-            Invoke("StartRound",timeBetweenWaves);
+            soundBasics.SetLoopedVolume(1.0f);
+            roundStartAudioSource.Stop();
+            Invoke("StartRound", timeBetweenWaves);
         }
     }
 }

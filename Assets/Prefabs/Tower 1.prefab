@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 7586718928533179056}
   m_Layer: 0
   m_Name: GetTorre
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

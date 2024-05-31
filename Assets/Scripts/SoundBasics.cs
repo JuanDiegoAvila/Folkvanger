@@ -12,6 +12,8 @@ public class SoundBasics : MonoBehaviour
 
     public List<AudioClip> randomSounds; // Assign in Unity Editor
 
+    private AudioSource loopedSource; // Reference to the AudioSource for looped sound
+
     void Start()
     {
         // Play looped sound with specified volume
@@ -21,11 +23,20 @@ public class SoundBasics : MonoBehaviour
     // Plays a sound looped with volume control
     void PlayLoopedSound(float volume)
     {
-        AudioSource source = gameObject.AddComponent<AudioSource>();
-        source.clip = loopedClip;
-        source.loop = true; // Enable looping
-        source.volume = volume; // Set volume
-        source.Play();
+        loopedSource = gameObject.AddComponent<AudioSource>();
+        loopedSource.clip = loopedClip;
+        loopedSource.loop = true; // Enable looping
+        loopedSource.volume = volume; // Set volume
+        loopedSource.Play();
+    }
+
+    // Sets the volume of the looped sound
+    public void SetLoopedVolume(float volume)
+    {
+        if (loopedSource != null)
+        {
+            loopedSource.volume = volume;
+        }
     }
 
     // Plays a one-shot sound with volume control
@@ -44,7 +55,6 @@ public class SoundBasics : MonoBehaviour
     // General method to play a sound with given volume
     private void PlaySound(AudioClip clip, float volume)
     {
-        Debug.Log("estoy aca "+ volume);
         AudioSource source = gameObject.AddComponent<AudioSource>();
         source.clip = clip;
         source.volume = volume;
