@@ -26,6 +26,8 @@ namespace Assets.Scripts
         private Animator animator;
         private bool adentroDeCollider;
         private bool estaCompleto;
+        public PolygonColliderUpdater polygonCollider;
+        public CapsuleCollider2D otherCollider;
 
         private enum Estado
         {
@@ -41,6 +43,7 @@ namespace Assets.Scripts
             tiempoActual = 0;
             carneProducida = 0;
             estaCompleto = false;
+            otherCollider.isTrigger = true;
 
             // Obtener el precio de la mejora.
             manager = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
@@ -115,6 +118,8 @@ namespace Assets.Scripts
                         estado = Estado.completo;
                         objetoComprar.SetActive(false);
                         estaCompleto = true;
+                        otherCollider.isTrigger = false;
+                        polygonCollider.MovePlayerOutOfCollider(otherCollider);
                         break;
                 }
             }

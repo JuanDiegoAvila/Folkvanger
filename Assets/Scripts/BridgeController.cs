@@ -1,9 +1,13 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class BridgeController : MonoBehaviour
 {
     public string tagToFind = "towerIsland1"; // El tag que estás buscando
     private GameObject[] taggedObjects;
+
+    public GameObject islandCanvas;
 
     public AudioSource audioSource;
     public GameObject soundPlayer;
@@ -38,14 +42,21 @@ public class BridgeController : MonoBehaviour
             {
                 if (torreComponent.GetEstado() != Torre.Estado.completo)
                 {
-                    Debug.Log("Aun falta");
                     return;
                 }
             }
         }
 
-        // Si todos están completos, desactiva el objeto
+        StartCoroutine(ShowMessage());
         audioSource.Play();
+    }
+
+    IEnumerator ShowMessage()
+    {
+        islandCanvas.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+        islandCanvas.SetActive(false);
         gameObject.SetActive(false);
     }
 }

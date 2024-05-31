@@ -38,5 +38,21 @@ namespace Assets.Scripts
                 }
             }
         }
+
+        public void MovePlayerOutOfCollider(CapsuleCollider2D otherCollider)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                Collider2D playerCollider = player.GetComponent<Collider2D>();
+                if (playerCollider != null && (polygonCollider.IsTouching(playerCollider) || polygonCollider.IsTouching(otherCollider)))
+                {
+                    Vector2 direction = (player.transform.position - transform.position).normalized;
+                    // Usa una distancia fija o un pequeño multiplicador de las dimensiones del colisionador
+                    Vector2 newPosition = (Vector2)player.transform.position + direction * 0.05f;
+                    player.transform.position = newPosition;
+                }
+            }
+        }
     }
 }

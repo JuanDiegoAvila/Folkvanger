@@ -832,6 +832,7 @@ GameObject:
   - component: {fileID: 995482676815202637}
   - component: {fileID: 4932717176940408564}
   - component: {fileID: 7920076218687904281}
+  - component: {fileID: 655743557415071662}
   m_Layer: 0
   m_Name: GetCarne
   m_TagString: Untagged
@@ -919,6 +920,8 @@ MonoBehaviour:
   Recolectar: {fileID: 4824523363433146997}
   audioSource: {fileID: 5622859816330797252}
   collectAudioSource: {fileID: 0}
+  polygonCollider: {fileID: 7931917430695514506}
+  otherCollider: {fileID: 655743557415071662}
 --- !u!82 &7920076218687904281
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1015,6 +1018,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &655743557415071662
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6603177605945963747}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.77073264, y: -0.0035193563}
+  m_Size: {x: 0.6618886, y: 1.3446382}
+  m_Direction: 0
 --- !u!1 &8233161118309672135
 GameObject:
   m_ObjectHideFlags: 0

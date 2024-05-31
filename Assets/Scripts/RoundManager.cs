@@ -11,6 +11,8 @@ public class RoundManager : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform[] spawnPoints;
     public TextMeshProUGUI roundText;
+    public TextMeshProUGUI roundMessage;
+    public GameObject roundCanvas;
 
     public AudioSource roundStartAudioSource;
     public SoundBasics soundBasics;  // Reference to the SoundBasics script
@@ -94,6 +96,16 @@ public class RoundManager : MonoBehaviour
         waveInProgress = false;
     }
 
+    IEnumerator ShowMessage()
+    {
+
+        roundMessage.text = "Wave Complete! Prepare for round " + (currentRound + 1);
+        roundCanvas.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+        roundCanvas.SetActive(false);
+    }
+
     void SpawnEnemy()
     {
         int spawnIndex = Random.Range(0, spawnPoints.Length);
@@ -106,6 +118,7 @@ public class RoundManager : MonoBehaviour
         enemiesRemainingAlive--;
         if (enemiesRemainingAlive <= 0 && !waveInProgress)
         {
+            StartCoroutine(ShowMessage());
             soundBasics.SetLoopedVolume(1.0f);
             roundStartAudioSource.Stop();
             Invoke("StartRound", timeBetweenWaves);
