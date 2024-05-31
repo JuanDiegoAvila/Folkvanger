@@ -20,6 +20,7 @@ namespace Assets.Scripts
         public GameObject Recolectar;
 
         public AudioSource audioSource;
+        public AudioSource collectAudioSource;
 
         private int Precio;
         private Animator animator;
@@ -91,6 +92,7 @@ namespace Assets.Scripts
 
         public void RecogerCarne()
         {
+            collectAudioSource.Play();
             manager.AddMeat(carneProducida);
             tiempoActual = 0;
             carneProducida = 0;
