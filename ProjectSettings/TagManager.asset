@@ -8,6 +8,7 @@ TagManager:
   - GameEnd
   - tower
   - towerIsland1
+  - buildingIsland2
   layers:
   - Default
   - TransparentFX
