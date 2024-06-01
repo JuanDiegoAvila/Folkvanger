@@ -24,6 +24,11 @@ public class BridgeController : MonoBehaviour
         {
             audioSource = soundPlayer.GetComponent<AudioSource>();
         }
+
+        if(!gameObject.activeSelf)
+        {
+            Torre.OnTowerStateChanged -= CheckAllTowersComplete;
+        }
     }
 
     void OnDestroy()
@@ -34,6 +39,11 @@ public class BridgeController : MonoBehaviour
 
     void CheckAllTowersComplete()
     {
+        if(!gameObject.activeSelf)
+        {
+            return;
+        }
+
         foreach (GameObject obj in taggedObjects)
         {
             Torre torreComponent = obj.GetComponent<Torre>();
@@ -54,8 +64,7 @@ public class BridgeController : MonoBehaviour
     IEnumerator ShowMessage()
     {
         islandCanvas.SetActive(true);
-
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         islandCanvas.SetActive(false);
         gameObject.SetActive(false);
     }
