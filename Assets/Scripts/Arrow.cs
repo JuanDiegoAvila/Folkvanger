@@ -28,7 +28,7 @@ namespace Assets.Scripts
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                collision.gameObject.GetComponent<IDamageable>().TakeDamage(10);
+                collision.gameObject.GetComponent<IDamageable>().TakeDamage(10, new Vector2());
                 Destroy(gameObject);
             }
         }

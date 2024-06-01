@@ -250,6 +250,7 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 0.5
   attackRate: 2
+  enabled: 1
   attackCooldown: 2
 --- !u!60 &2949793550128751397
 PolygonCollider2D:
@@ -336,7 +337,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   slider: {fileID: 7091871469126800737}
-  roundManager: {fileID: 2527423075673324988, guid: ed27b6632dd6a8d48852f351c08cbf38, type: 3}
 --- !u!1 &4844150833596545751
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ namespace Assets.Scripts
             }
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, Vector2 direction)
         {
             if (!gameObject.GetComponent<Collider2D>().enabled)
             {

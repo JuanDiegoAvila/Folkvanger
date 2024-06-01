@@ -31,7 +31,7 @@ namespace Assets.Scripts
                 if (currentHunger <= 0)
                 {
                     currentHunger = 0;
-                    player.TakeDamage(1);
+                    player.TakeDamage(1, new Vector2());
                 }
             }
 

@@ -9,6 +9,7 @@ namespace Assets.Scripts
         public int currentHealth;
 
         public Slider slider;
+        private Torch_Enemy torchEnemy;
 
         private RoundManager roundManager;
 
@@ -16,11 +17,16 @@ namespace Assets.Scripts
         {
             currentHealth = maxHealth;
             roundManager = FindObjectOfType<RoundManager>();
+            torchEnemy = GetComponent<Torch_Enemy>();
         }
 
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, Vector2 direction)
         {
+            if(torchEnemy != null)
+            {
+                torchEnemy.ApplyKnockback(direction);
+            }
 
             currentHealth -= damage;
 

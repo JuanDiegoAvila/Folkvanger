@@ -26,6 +26,13 @@ public class Torch_Enemy : MonoBehaviour
 
     private int angleAnimation;
 
+    // Knockback
+    public float knockbackStrength = 5f;
+    public float knockbackDuration = 0.2f;
+    private bool isKnockedBack = false;
+    private Vector2 knockbackDirection;
+    private float knockbackEndTime;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player") != null ? GameObject.FindGameObjectWithTag("Player").transform : null;
@@ -34,12 +41,27 @@ public class Torch_Enemy : MonoBehaviour
 
     void Update()
     {
+
+        if (isKnockedBack)
+        {
+            if (Time.time >= knockbackEndTime)
+            {
+                isKnockedBack = false;
+            }
+            else
+            {
+                transform.Translate(knockbackDirection * knockbackStrength * Time.deltaTime);
+                return;
+            }
+        }
+
         attackTimer += Time.deltaTime; // Incrementar el temporizador basado en el tiempo transcurrido
 
         if(target == null)
         {
             return;
         }
+
 
         Vector2 direction = target.position - transform.position;
 
@@ -113,7 +135,6 @@ public class Torch_Enemy : MonoBehaviour
     public void performAttack ( int angleAnimation )
     {
 
-        Debug.Log("Hit");
 
         switch (angleAnimation)
         {
@@ -145,8 +166,17 @@ public class Torch_Enemy : MonoBehaviour
         // Aplica daño si se encontró un enemigo
         if (hitPlayer != null)
         {
-            hitPlayer.GetComponent<IDamageable>().TakeDamage(20);
+            hitPlayer.GetComponent<IDamageable>().TakeDamage(20, new Vector2());
         }
+    }
+
+    public void ApplyKnockback(Vector2 direction)
+    {
+
+        print("Knockback");
+        isKnockedBack = true;
+        knockbackDirection = direction.normalized;
+        knockbackEndTime = Time.time + knockbackDuration;
     }
 
     void OnDrawGizmosSelected()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Assets.Scripts
 {
@@ -92,9 +93,12 @@ namespace Assets.Scripts
             foreach (Collider2D enemy in hitEnemies)
             {
                 IDamageable damageable = enemy.GetComponent<IDamageable>();
+
                 if (damageable != null)
                 {
-                    damageable.TakeDamage(20);
+                    Vector2 forceDirection = enemy.transform.position - transform.position;
+                    forceDirection.Normalize();
+                    damageable.TakeDamage(20, forceDirection);
                 }
 
                 Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
