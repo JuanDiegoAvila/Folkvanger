@@ -206,8 +206,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4396110128467351925}
   audioSource: {fileID: 4705387815983246880}
+  resourceManager: {fileID: 0}
   maxHits: 3
   currentHits: 0
+  woodPerHit: 20
   coolingTime: 50
   currentCoolingTime: 0
 --- !u!82 &4705387815983246880
