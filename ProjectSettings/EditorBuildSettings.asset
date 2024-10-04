@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PaginaInicio.unity
     guid: 8e76ab37cdf35884f9ac7c963fdfb943
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MapTest.unity
     guid: c30bdabee2722f3408c92c126b6202af
+  - enabled: 1
+    path: Assets/Scenes/TerrainTest.unity
+    guid: a1d6da2876d28ae4a86ddeb71a7c1e70
   m_configObjects: {}
