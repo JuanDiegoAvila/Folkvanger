@@ -1,28 +1,8 @@
 fileFormatVersion: 2
-guid: e6a8020a8a66b6a4899fa1601a004bc8
+guid: fa2f357df4d2767468c35f84de007f63
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:AnimationClip
-      assembly: UnityEngine.AnimationModule
-      name: Chopped
-    second: {fileID: 7400000, guid: 6a17204a5800f70439fdedb8ae9643f3, type: 2}
-  - first:
-      type: UnityEngine:AnimationClip
-      assembly: UnityEngine.AnimationModule
-      name: Hit
-    second: {fileID: 7400000, guid: 2a0a6191dbe0c8b4fbe83482ffa46a39, type: 2}
-  - first:
-      type: UnityEngine:AnimationClip
-      assembly: UnityEngine.AnimationModule
-      name: Idle
-    second: {fileID: 7400000, guid: 388e369792aedf643b8c974cb930474c, type: 2}
-  - first:
-      type: UnityEngine:AnimationClip
-      assembly: UnityEngine.AnimationModule
-      name: Original
-    second: {fileID: 7400000, guid: 6859b0e8632f109439c21ebc530d14ba, type: 2}
+  externalObjects: {}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -55,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -117,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638506975431643432
+  platformSettingsDirtyTick: 638634027595588635
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -141,18 +121,138 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Tree_Frame_0
+  - name: Foam_Frame_0
     originalName: 
-    pivot: {x: 0.4994972, y: 0.10917678}
+    pivot: {x: 0.49999997, y: -0.6707317}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 284
+      width: 82
+      height: 82
+    spriteID: 13fe71ea9479dc94d980a699e8f19f34
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 284}
+  - name: Foam_Frame_1
+    originalName: 
+    pivot: {x: 0.4938272, y: -0.6707317}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 4
+      width: 81
+      height: 82
+    spriteID: e119a417e4f00904f80d89999ec3fd5f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 4}
+  - name: Foam_Frame_2
+    originalName: 
+    pivot: {x: 0.4938272, y: -0.6707317}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 94
+      width: 81
+      height: 82
+    spriteID: a63e94bbd6fbc8840a5175ded87416fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 94}
+  - name: Foam_Frame_3
+    originalName: 
+    pivot: {x: 0.4938272, y: -0.6707317}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 184
+      width: 81
+      height: 82
+    spriteID: 9879e2563fbb58741aba6110448be91f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 184}
+  - name: Foam_Frame_4
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.6707317}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 374
+      width: 82
+      height: 82
+    spriteID: 1539749756d5d904989f33810c67fd2d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 374}
+  - name: Foam_Frame_5
+    originalName: 
+    pivot: {x: 0.49411768, y: -0.61627907}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 98
+      width: 85
+      height: 86
+    spriteID: e83c423c78747c5488a8307355f2133a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 98}
+  - name: Foam_Frame_6
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.61627907}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 111
-      height: 174
-    spriteID: 6a0df91ffa19a85499ce51786b6e3f15
+      width: 86
+      height: 86
+    spriteID: b88705142ee73bb4a8f90e724fe82534
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,18 +261,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Tree_Frame_1
+  - name: Foam_Frame_7
     originalName: 
-    pivot: {x: 0.49399254, y: 0.09161789}
+    pivot: {x: 0.5, y: -0.6428572}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 186
-      width: 111
-      height: 174
-    spriteID: 7109247d518c11640945287011f1db7c
+      y: 192
+      width: 84
+      height: 84
+    spriteID: 24c555d248accf44aa83aae021b57f22
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,200 +280,80 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 186}
-  - name: Tree_Frame_2
-    originalName: 
-    pivot: {x: 0.4893921, y: 0.09161809}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 242
-      y: 4
-      width: 110
-      height: 174
-    spriteID: 820bfe64439856042b1807897e32dcc1
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 242, y: 4}
-  - name: Tree_Frame_3
-    originalName: 
-    pivot: {x: 0.49399245, y: 0.095129825}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 123
-      y: 4
-      width: 111
-      height: 174
-    spriteID: 5684f29851779344a8489dace340bf5c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 123, y: 4}
-  - name: Tree_Frame_4
-    originalName: 
-    pivot: {x: 0.4974962, y: 0.09512978}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 123
-      y: 186
-      width: 111
-      height: 174
-    spriteID: 03bfaa55e4c09d44f86920fa0c8492e7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 123, y: 186}
-  - name: Tree_Frame_5
-    originalName: 
-    pivot: {x: 0.5146772, y: 0.08861537}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 360
-      y: 4
-      width: 106
-      height: 173
-    spriteID: 8b2663b9e9007824ea711eb696e9adb2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 360, y: 4}
-  - name: Tree_Frame_6
-    originalName: 
-    pivot: {x: 0.4974508, y: 0.096798815}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 242
-      y: 186
-      width: 109
-      height: 171
-    spriteID: dde49beb9d6d12145a30bea5bde3a93a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 242, y: 186}
-  - name: Tree_Frame_7
-    originalName: 
-    pivot: {x: 0.47222218, y: -0.53333336}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 368
-      width: 36
-      height: 30
-    spriteID: 85b7b90dcca7c744b882744f9911fc4d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 368}
+    uvTransform: {x: 4, y: 192}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 780980726
-    name: Tree
+    guid: -1495573631
+    name: Foam
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Tree_Frame_0
+    - name: Foam_Frame_0
       frameIndex: 0
       cellRect:
-        x: 43
-        y: 14
-        width: 111
-        height: 174
-      spriteId: 6a0df91ffa19a85499ce51786b6e3f15
-    - name: Tree_Frame_1
+        x: 55
+        y: 55
+        width: 82
+        height: 82
+      spriteId: 13fe71ea9479dc94d980a699e8f19f34
+    - name: Foam_Frame_1
       frameIndex: 1
       cellRect:
-        x: 43
-        y: 14
-        width: 111
-        height: 174
-      spriteId: 7109247d518c11640945287011f1db7c
-    - name: Tree_Frame_2
+        x: 56
+        y: 55
+        width: 81
+        height: 82
+      spriteId: e119a417e4f00904f80d89999ec3fd5f
+    - name: Foam_Frame_2
       frameIndex: 2
       cellRect:
-        x: 44
-        y: 14
-        width: 110
-        height: 174
-      spriteId: 820bfe64439856042b1807897e32dcc1
-    - name: Tree_Frame_3
+        x: 56
+        y: 55
+        width: 81
+        height: 82
+      spriteId: a63e94bbd6fbc8840a5175ded87416fd
+    - name: Foam_Frame_3
       frameIndex: 3
       cellRect:
-        x: 43
-        y: 14
-        width: 111
-        height: 174
-      spriteId: 5684f29851779344a8489dace340bf5c
-    - name: Tree_Frame_4
+        x: 56
+        y: 55
+        width: 81
+        height: 82
+      spriteId: 9879e2563fbb58741aba6110448be91f
+    - name: Foam_Frame_4
       frameIndex: 4
       cellRect:
-        x: 42
-        y: 14
-        width: 111
-        height: 174
-      spriteId: 03bfaa55e4c09d44f86920fa0c8492e7
-    - name: Tree_Frame_5
+        x: 55
+        y: 55
+        width: 82
+        height: 82
+      spriteId: 1539749756d5d904989f33810c67fd2d
+    - name: Foam_Frame_5
       frameIndex: 5
       cellRect:
-        x: 39
-        y: 14
-        width: 106
-        height: 173
-      spriteId: 8b2663b9e9007824ea711eb696e9adb2
-    - name: Tree_Frame_6
+        x: 54
+        y: 53
+        width: 85
+        height: 86
+      spriteId: e83c423c78747c5488a8307355f2133a
+    - name: Foam_Frame_6
       frameIndex: 6
       cellRect:
-        x: 43
-        y: 14
-        width: 109
-        height: 171
-      spriteId: dde49beb9d6d12145a30bea5bde3a93a
-    - name: Tree_Frame_7
+        x: 53
+        y: 53
+        width: 86
+        height: 86
+      spriteId: b88705142ee73bb4a8f90e724fe82534
+    - name: Foam_Frame_7
       frameIndex: 7
       cellRect:
-        x: 79
-        y: 16
-        width: 36
-        height: 30
-      spriteId: 85b7b90dcca7c744b882744f9911fc4d
+        x: 54
+        y: 54
+        width: 84
+        height: 84
+      spriteId: 24c555d248accf44aa83aae021b57f22
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -402,6 +382,30 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048

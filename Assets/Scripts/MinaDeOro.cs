@@ -12,7 +12,7 @@ namespace Assets.Scripts
         private readonly int limiteOro = 200;
         float tiempoParaAgregarOro = 0f;
 
-        private Estado estado = new Estado();
+        public Estado estado = new Estado();
 
         private ResourceManager manager;
         public GameObject objetoComprar;
@@ -27,7 +27,7 @@ namespace Assets.Scripts
         private bool adentroDeCollider;
         private bool estaCompleto;
 
-        private enum Estado
+        public enum Estado
         {
             idle = 1,
             mid = 2,
@@ -97,6 +97,16 @@ namespace Assets.Scripts
             tiempoActual = 0;
             oroProducido = 0;
             Recolectar.SetActive(false);
+        }
+
+        public int PawnCollect()
+        {
+            collectAudioSource.Play();
+            tiempoActual = 0;
+            var oro = oroProducido;
+            oroProducido = 0;
+            Recolectar.SetActive(false);
+            return oro;
         }
 
         void ComprarMejora()

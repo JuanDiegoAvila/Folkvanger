@@ -12,14 +12,9 @@ public class Torch_Enemy : MonoBehaviour
 
     //Attacking Logic
     public Transform attackPoint;
-
     public LayerMask enemyLayers;
-
     public float attackRange = 0.5f;
-
     public float attackRate = 2f;
-
-    //private PlayerController playerController;
 
     public float attackCooldown = 2.0f; // Tiempo entre ataques en segundos
     private float attackTimer = 0;      // Temporizador para rastrear el tiempo desde el último ataque

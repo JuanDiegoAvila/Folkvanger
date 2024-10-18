@@ -16,9 +16,12 @@ namespace Assets.Scripts
         public float coolingTime = 50f;
         public float currentCoolingTime = 0f;
 
+        public bool isChoped;
+
         void Start()
         {
             currentHits = maxHits;
+            isChoped = false;
         }
 
         void Update()
@@ -29,10 +32,30 @@ namespace Assets.Scripts
                 if (currentCoolingTime >= coolingTime)
                 {
                     animator.SetBool("isChopped", false);
+                    isChoped = false;
                     gameObject.GetComponent<Collider2D>().enabled = true;
                     currentHits = maxHits;
                     currentCoolingTime = 0f;
                 }
+            }
+        }
+
+        public void TakeDamageWithoutResources()
+        {
+            if (!gameObject.GetComponent<Collider2D>().enabled)
+            {
+                return;
+            }
+
+            audioSource.Play();
+            currentHits -= 1;
+            animator.SetTrigger("isHit");
+
+            if (currentHits <= 0)
+            {
+                isChoped = true;
+                animator.SetBool("isChopped", true);
+                gameObject.GetComponent<Collider2D>().enabled = false;
             }
         }
 
@@ -45,12 +68,13 @@ namespace Assets.Scripts
 
             audioSource.Play();
             resourceManager.AddWood(woodPerHit);
-            // Trees don't take damage, they just lose hits
+
             currentHits -= 1;
             animator.SetTrigger("isHit");
 
             if (currentHits <= 0)
             {
+                isChoped = true;
                 animator.SetBool("isChopped", true);
                 gameObject.GetComponent<Collider2D>().enabled = false;
             }

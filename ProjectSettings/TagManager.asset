@@ -9,6 +9,8 @@ TagManager:
   - tower
   - towerIsland1
   - buildingIsland2
+  - Resource
+  - Pawn
   layers:
   - Default
   - TransparentFX
