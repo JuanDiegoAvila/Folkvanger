@@ -25517,7 +25517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &715581868
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45959,6 +45959,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 695063374208637678, guid: 51bd38d8fe90640448ba3262a61236a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TerrainTest
+      objectReference: {fileID: 0}
     - target: {fileID: 8387040529487227144, guid: 51bd38d8fe90640448ba3262a61236a9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -46009,15 +46013,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387040529487227144, guid: 51bd38d8fe90640448ba3262a61236a9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8387040529487227144, guid: 51bd38d8fe90640448ba3262a61236a9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8387040529487227144, guid: 51bd38d8fe90640448ba3262a61236a9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8387040529487227144, guid: 51bd38d8fe90640448ba3262a61236a9, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -75190,10 +75194,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5249363451831929578, guid: 5a30f666fd82fea4c9c564786e16b4c4, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7482615387724942213, guid: 5a30f666fd82fea4c9c564786e16b4c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.321401
@@ -80328,13 +80328,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 815546707}
     m_Modifications:
+    - target: {fileID: 567645112278395628, guid: 5a30f666fd82fea4c9c564786e16b4c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5249363451831929578, guid: 5a30f666fd82fea4c9c564786e16b4c4, type: 3}
       propertyPath: m_Name
       value: Tower 1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5249363451831929578, guid: 5a30f666fd82fea4c9c564786e16b4c4, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: towerIsland1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128752957641715040, guid: 5a30f666fd82fea4c9c564786e16b4c4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7482615387724942213, guid: 5a30f666fd82fea4c9c564786e16b4c4, type: 3}
       propertyPath: m_LocalPosition.x

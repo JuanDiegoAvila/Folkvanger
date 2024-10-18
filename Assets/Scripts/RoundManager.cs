@@ -51,7 +51,7 @@ public class RoundManager : MonoBehaviour
 
         foreach (GameObject obj in taggedObjects)
         {
-            Torre torreComponent = obj.GetComponent<Torre>();
+            Torre torreComponent = obj.GetComponentInChildren<Torre>();
 
             if (torreComponent != null)
             {

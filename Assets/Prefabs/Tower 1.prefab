@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 7349142532966781572}
   m_Layer: 0
   m_Name: Tower 1
-  m_TagString: Untagged
+  m_TagString: towerIsland1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -784,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 34b53bd57dfe9d54bb96a9eb14177cf2, type: 2}
     - target: {fileID: 3626916397498700004, guid: c368782e090d1bc43b778625ec99e553, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c368782e090d1bc43b778625ec99e553, type: 3}
       propertyPath: m_LocalPosition.x
