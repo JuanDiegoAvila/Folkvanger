@@ -93,5 +93,15 @@ namespace Assets.Scripts
             }
             return false;
         }
+
+        public bool ComprarMejoraOro(int precio)
+        {
+            if (precio <= currentGold)
+            {
+                currentGold -= precio;
+                return true;
+            }
+            return false;
+        }
     }
 }

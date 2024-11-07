@@ -43,6 +43,15 @@ namespace Assets.Scripts
             animator = GetComponentInChildren<Animator>();
         }
 
+        public void InstanciarPeon(GameObject origen, ResourceManager resourceManager, BoxCollider2D limit)
+        {
+            origin = origen;
+            manager = resourceManager;
+            areaLimit = limit;
+            state = PawnState.Idle;
+            chopCooldownTimer = 0f;
+        }
+
         private void Update()
         {
             if (chopCooldownTimer > 0)
@@ -226,6 +235,16 @@ namespace Assets.Scripts
 
                 isHoldingObject = false;
             }
+        }
+
+        public void DisableSpriteRender()
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        public void EnableSpriteRender()
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
 
         private void OnDrawGizmos()

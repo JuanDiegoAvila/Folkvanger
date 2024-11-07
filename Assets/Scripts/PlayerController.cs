@@ -11,7 +11,7 @@ namespace Assets.Scripts
         public GameObject endGameCanva;
 
         public GameObject deathAnimationPrefab;
-        public float speed = 5f; // Velocidad del jugador
+        public float speed = 3f; // Velocidad del jugador
 
         private Rigidbody2D rb; // Referencia al componente Rigidbody2D
         public Animator animator;
