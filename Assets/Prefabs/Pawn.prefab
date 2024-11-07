@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 2736623469120010714}
   - component: {fileID: 4324333742517154750}
   - component: {fileID: 8317734107051283536}
+  - component: {fileID: 6625068435192378262}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Pawn
@@ -241,7 +242,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -6687114806827989679, guid: 97e54688ecee2b346a39392fb0af2ebe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -260,7 +261,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880506479302871913}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -305,6 +306,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   speed: 1
   origin: {fileID: 0}
+  areaLimit: {fileID: 0}
   chopCooldown: 2
 --- !u!95 &4324333742517154750
 Animator:
@@ -371,19 +373,46 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.3372093, y: 0.09883721}
-      - {x: 0.24418604, y: 0.30813953}
-      - {x: 0.13953489, y: 0.34302324}
-      - {x: -0.19767442, y: 0.34302324}
-      - {x: -0.3372093, y: 0.12209302}
-      - {x: -0.3372093, y: -0.075581394}
-      - {x: -0.30232558, y: -0.19186047}
-      - {x: -0.1744186, y: -0.29651162}
-      - {x: 0.13953489, y: -0.29651162}
-      - {x: 0.27906978, y: -0.22674419}
-      - {x: 0.3255814, y: -0.16860466}
-      - {x: 0.3372093, y: -0.13372093}
+    - - {x: 0.074748844, y: -0.15662448}
+      - {x: -0.0042766333, y: -0.18178701}
+      - {x: -0.06343442, y: -0.16790015}
+      - {x: -0.120685965, y: -0.1364049}
+      - {x: -0.15873608, y: -0.19635922}
+      - {x: -0.19723019, y: -0.20156252}
+      - {x: -0.17634425, y: -0.25485104}
+      - {x: -0.11492744, y: -0.28951266}
+      - {x: 0.12553686, y: -0.26501635}
+      - {x: 0.15308893, y: -0.26173896}
+      - {x: 0.15410718, y: -0.21759732}
+      - {x: 0.15873584, y: -0.16521622}
   m_UseDelaunayMesh: 0
+--- !u!50 &6625068435192378262
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880506479302871913}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &2313023744868217960
 GameObject:
   m_ObjectHideFlags: 0

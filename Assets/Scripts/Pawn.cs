@@ -23,7 +23,7 @@ namespace Assets.Scripts
         private bool collectingWood = false;
         private Tree currentTree;
 
-        private float restingTime = 4f;
+        private float restingTime = 10f;
         private float currentRestingTime = 0f;
 
         public GameObject origin;
@@ -196,6 +196,8 @@ namespace Assets.Scripts
                 else
                 {
                     state = PawnState.Idle;
+                    animator.SetBool("isRunning", false);
+
                 }
             }
         }
