@@ -4,15 +4,14 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Torre : MonoBehaviour
+    public class Castle : MonoBehaviour
     {
-        public static event Action OnTowerStateChanged;
         private Estado estado = new Estado();
 
         private ResourceManager manager;
         public GameObject objetoComprar;
         public GameObject TextoPrecio;
-        public GameObject Arquero;
+        public GameObject[] Arqueros;
 
         public AudioSource audioSource;
 
@@ -28,7 +27,6 @@ namespace Assets.Scripts
             completo = 3
         }
 
-        // Start is called before the first frame update
         void Start()
         {
             estado = Estado.idle;
@@ -41,7 +39,6 @@ namespace Assets.Scripts
             Precio = Convert.ToInt32(textoPrecio.text);
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (adentroDeCollider && Input.GetKeyDown(KeyCode.C))
@@ -66,6 +63,7 @@ namespace Assets.Scripts
             }
         }
 
+
         void ComprarMejora()
         {
             if (manager.ComprarMejora(Precio))
@@ -75,8 +73,8 @@ namespace Assets.Scripts
                 {
                     case Estado.idle:
                         estado = Estado.mid;
-                        Precio = 200;
-                        TextoPrecio.GetComponent<TextMeshPro>().text = "200";
+                        Precio = 700;
+                        TextoPrecio.GetComponent<TextMeshPro>().text = "700";
                         break;
                     case Estado.mid:
                         estado = Estado.completo;
@@ -84,10 +82,11 @@ namespace Assets.Scripts
                         estaCompleto = true;
 
                         // Activar arqueros 
-                        Arquero.SetActive(true);
+                        foreach (var arquero in Arqueros)
+                        {
+                            arquero.SetActive(true);
+                        }
 
-                        // Notificar que el estado ha cambiado a completo
-                        OnTowerStateChanged?.Invoke();
                         break;
                 }
             }
